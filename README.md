@@ -25,7 +25,7 @@ What do we need?
 
 2. It needs to reveal the person's email when the envelope button is pressed.
 
-3. We need to be able to post something without needing the image file.
+<!-- 3. We need to be able to post something without needing the image file.  -->
 
 4. Style it a tiny bit so it doesn't look too much like the logo.
 
