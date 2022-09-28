@@ -15,5 +15,8 @@ router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get('/comedy', ensureAuth, postsController.getComedy)
+router.get('/truecrime', ensureAuth, postsController.getTrueCrime)
+router.get('/science', ensureAuth, postsController.getScience)
+router.get('/other', ensureAuth, postsController.getOther)
 
 module.exports = router;

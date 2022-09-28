@@ -2,3 +2,7 @@
     height: 25%;
     width: 25%;
 }
+nav li{
+    display: inline;
+    border: 2px solid red;
+}

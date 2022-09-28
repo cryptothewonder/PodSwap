@@ -21,7 +21,31 @@ module.exports = {
   getComedy: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      res.render("comedy.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getScience: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("science.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getTrueCrime: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("truecrime.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getOther: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("other.ejs", { posts: posts});
     } catch (err) {
       console.log(err);
     }
@@ -46,6 +70,7 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        email: req.user.email,
         category: req.body.category,
       });
       console.log("Post has been added!");
