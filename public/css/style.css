@@ -1,8 +1,14 @@
 #logo{
-    height: 25%;
-    width: 25%;
+    height: 33%;
+    width: 33%;
 }
 nav li{
     display: inline;
-    border: 2px solid red;
+    border-left: 2px solid rgb(231, 83, 83);
+    /* border-right: 2px solid rgb(180, 114, 114); */
+}
+
+#navbar-logo{
+    height: 10%;
+    width: 10%;
 }

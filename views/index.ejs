@@ -1,11 +1,25 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-danger"> Login</a>
-        <a href="/signup" class="col-3 btn btn-danger"> Signup</a>
-    </div>
-</main>
+
+    <section class="bg-danger text-light p-5 text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex justify-content-between">
+                <div>
+                    <h2>Find Your Next <span class="text-dark"> Expert</span></h2>
+                    <span>The one-stop shop to swap!</span>
+                    <p class="lead my-4">Need a guest?  Have a mic? Come explore our trove of experts on a variety of topics from Science, to Comedy, to Other!</p>
+                </div>
+                <img class= 'img-fluid w-50 d-none d-sm-block' src="/imgs/two-pods.svg">
+            </div>
+        </div>   
+    
+        <div class="row justify-content-around mt-5">
+            <a href="/login" class="col-3 btn btn-light"> Login</a>
+            <a href="/signup" class="col-3 btn btn-light"> Signup</a>
+        </div>
+    </section>
+    <h1 class="text-center"><a href="/profile"><img src="/imgs/podswap-logo.png" alt="PodSwap" id="logo"></a></h1>
+
     
 
 <%- include('partials/footer') -%>
