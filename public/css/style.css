@@ -12,3 +12,12 @@ nav li{
     height: 10%;
     width: 10%;
 }
+
+
+/* Media queries */
+
+@media(min-width: 768px) {
+    .news-input{
+        width: 50%;
+    }
+}
