@@ -13,6 +13,11 @@ nav li{
     width: 10%;
 }
 
+/* profilepic */
+.profilecontainer{
+    width: 30%;
+}
+
 
 /* Media queries */
 
@@ -20,4 +25,13 @@ nav li{
     .news-input{
         width: 50%;
     }
+
+}
+
+@media(max-width: 768px){
+   .totalProfile{
+        display: flex;
+        flex-direction: column;
+   }
+   
 }

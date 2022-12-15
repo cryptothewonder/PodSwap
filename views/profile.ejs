@@ -1,12 +1,16 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row mt-5">
+  <div class="row mt-5  totalProfile">
       <div class="col-6">
+        <div class="profilecontainer mt-5">
+          <img class= 'rounded-circle img-fluid' src="<%= user.profilePic%>" alt="pofile pic">
+        </div>
           <div>
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
               <a href="/logout" class="col-3 btn btn-danger">Logout</a>
           </div>
+          
           <div class="mt-5">
             <h2>Post Your Pod!</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">

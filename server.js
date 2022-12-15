@@ -10,6 +10,9 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
+const messageRoutes = require("./routes/messages")
+
+
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -56,8 +59,45 @@ app.use(flash());
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
+app.use("/inbox", messageRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 });
+
+// Connect to Socket.io
+
+// const express = require('express')
+const { createServer } = require("http");
+const { Server } = require("socket.io");
+
+
+const cors = require('cors')
+
+// const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer, { 
+  cors: {
+    origin: "http://localhost:2122",
+    methods:['GET','POST']
+} });
+
+httpServer.listen(4000, () => {
+  console.log("I'm listening in 4000")
+});
+
+io.on("connection", (socket) => {
+    console.log('user connected')
+    socket.emit('message', 'Hello World')
+    
+    socket.on('disconnect', () => {
+      console.log('user disconnected')
+    })
+  // ...
+});
+
+
+
+
+  

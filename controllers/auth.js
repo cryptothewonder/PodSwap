@@ -66,10 +66,9 @@ exports.getSignup = (req, res) => {
   });
 };
 
-exports.postSignup =(req, res, next) => {
-  //profilepic
-  // const result = await cloudinary.uploader.upload(req.file.path);
-  console.log(req.file.path)
+exports.postSignup = async(req, res, next) => {
+  
+  
   // console.log(req.body.file)
 
   // console.log(req.body)
@@ -91,11 +90,16 @@ exports.postSignup =(req, res, next) => {
     gmail_remove_dots: false,
   });
 
+  console.log(req.file.path)
+  //profilepic
+  const result = await cloudinary.uploader.upload(req.file.path);
+
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
-    profilePic: req.body.file
+    profilePic:result.secure_url,
+    cloudinaryId: result.public_id,
   });
 
   User.findOne(
@@ -123,4 +127,6 @@ exports.postSignup =(req, res, next) => {
       });
     }
   );
+  
+
 };
