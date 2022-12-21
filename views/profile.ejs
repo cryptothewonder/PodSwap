@@ -32,15 +32,15 @@
                   <option value='other'>Other</option>
                 </select>
               </div>
-              <!-- <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div> -->
+              <div>
+              <label for="price">Price:</label>
+<input type="number" id="price" name="price" step="0.01" min="0" max="2000" placeholder="$0.00">
+              </div>
               <button type="submit" class="btn btn-danger" value="Upload">Submit</button>
             </form>
           </div>
       </div>
-      <div class="col-6">
+      <div class="col-6 border d-flex align-items-end justify-content-center">
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
@@ -53,7 +53,7 @@
           </li>
         <% } %>
         </ul>
-        <div class="row justify-content-center mt-5">
+        <div class="row pb-3 mt-5">
           <a class="btn btn-danger" href="/feed">Return to Feed</a>
         </div>  
       </div>  

@@ -60,8 +60,7 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
-      // Upload image to cloudinary
-      // const result = await cloudinary.uploader.upload(req.file.path);
+      
 
       await Post.create({
         title: req.body.title,
@@ -72,6 +71,7 @@ module.exports = {
         user: req.user.id,
         email: req.user.email,
         category: req.body.category,
+        price:req.body.price
       });
       console.log("Post has been added!");
       res.redirect("/profile");
