@@ -68,12 +68,13 @@ app.listen(process.env.PORT, () => {
 
 // Connect to Socket.io
 
-// const express = require('express')
+// const path = require('path')
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 
 
 const cors = require('cors')
+app.use(cors());
 
 // const app = express();
 const httpServer = createServer(app);
@@ -87,7 +88,7 @@ httpServer.listen(4000, () => {
   console.log("I'm listening in 4000")
 });
 
-io.on("connection", (socket) => {
+io.on("connection", socket => {
     console.log('user connected')
     socket.emit('message', 'Hello World')
     
@@ -97,6 +98,9 @@ io.on("connection", (socket) => {
   // ...
 });
 
+app.get("/inbox", (req, res) => {
+  res.sendFile(__dirname + "/views/inbox.html");
+});
 
 
 
