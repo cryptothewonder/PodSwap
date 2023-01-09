@@ -73,7 +73,8 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 
 
-const cors = require('cors')
+const cors = require('cors');
+const { Socket } = require("dgram");
 app.use(cors());
 
 // const app = express();
@@ -94,12 +95,20 @@ io.on("connection", socket => {
     
     socket.on('disconnect', () => {
       console.log('user disconnected')
+      io.emit('user has left the chat')
     })
   // ...
 });
 
+
+
 app.get("/inbox", (req, res) => {
   res.sendFile(__dirname + "/views/inbox.html");
+});
+
+app.get('/controllers/messageClient.js', (req, res) => {
+  res.set('Content-Type', 'text/javascript');
+  res.sendFile(__dirname + '/controllers/messageClient.js');
 });
 
 

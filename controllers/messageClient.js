@@ -1,6 +1,10 @@
 
-const socketio = io('http://localhost:4000');
+const socket = io('http://localhost:4000');
+    
+socket.on('connect', () => {
+  console.log('Connected to server');
+});
 
-socketio.on('message', message =>{
-    console.log(message)
-})
+socket.on('disconnect', () => {
+  console.log('Disconnected from server');
+});
