@@ -112,5 +112,7 @@ app.get('/controllers/messageClient.js', (req, res) => {
 });
 
 
+//image preview
+// app.use(express.static(path.join(process.cwd(), 'views')));
 
   

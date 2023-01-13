@@ -38,11 +38,21 @@
                           id="imageUpload"
                           name="file"
                         />
+                        <img id="preview-img" alt="Not Happening">
+                        <!-- <% if (typeof imagePath !== 'undefined') { %> -->
+                        
+                      <!-- <% } else { %>
+                          <img src="default-image.jpg" alt="Default Image">
+                      <% } %> -->
                       </div>
                     <button type="submit" class="btn btn-danger">Submit</button>
                   </form>
             </section>
         </div>
     </main>
+    <!-- <script src="/routes/imagePreview.js"></script>
+    <script>
+    document.getElementById('imageUpload').addEventListener('change', previewImage);
+    </script> -->
 
 <%- include('partials/footer') -%>
