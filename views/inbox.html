@@ -16,14 +16,12 @@
 </head>
 <body>
     <form id="msgForm" actions = ''>
-        <input type="text" id='messageInput' name="msg">
-        <button onclick = 'sendMessage()'>Send</button>
-        <div id="messages">
-
+        <input type="text" id='msg' name="msg">
+        <button>Send</button>
+        <div class="messages">
         </div>
     </form>
     <script src="/socket.io/socket.io.js"></script>
-    <script src = '/controllers/messageClient.js'>
-    </script>
+    <script src = '/controllers/messageClient.js'></script>
 </body>
 </html>

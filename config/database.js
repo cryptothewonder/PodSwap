@@ -9,10 +9,6 @@ const connectDB = async () => {
       useFindAndModify: false,
       useCreateIndex: true,
     });
-    
-    // io.on('connection', function(){
-    //     // let chat = 
-    // })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {

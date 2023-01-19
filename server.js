@@ -69,33 +69,43 @@ app.listen(process.env.PORT, () => {
 // Connect to Socket.io
 
 // const path = require('path')
-const { createServer } = require("http");
-const { Server } = require("socket.io");
-
-
+const http = require("http").createServer(app);
+const io = require("socket.io")(http);
 const cors = require('cors');
+
 const { Socket } = require("dgram");
 app.use(cors());
 
-// const app = express();
-const httpServer = createServer(app);
-const io = new Server(httpServer, { 
-  cors: {
-    origin: "http://localhost:2122",
-    methods:['GET','POST']
-} });
+// Potentially old code
+// const httpServer = createServer(app);
+// const io = new Server(httpServer, { 
+//   cors: {
+//     origin: "http://localhost:2122",
+//     methods:['GET','POST']
+// } });
 
-httpServer.listen(4000, () => {
+http.listen(4000, () => {
   console.log("I'm listening in 4000")
 });
 
+//Run when client connects
 io.on("connection", socket => {
+  
+    //Welcome current user
     console.log('user connected')
     socket.emit('message', 'Hello World')
-    
+
+    //Broadcast when a user connects
+    socket.broadcast.emit('message','A user has joined the chat');
+
+    //Runs when client disconnects
     socket.on('disconnect', () => {
       console.log('user disconnected')
-      io.emit('user has left the chat')
+      io.emit('message','user has left the chat')
+    })
+
+    socket.on('chatMessage',msg =>{
+      io.emit('message', msg);
     })
   // ...
 });

@@ -67,11 +67,6 @@ exports.getSignup = (req, res) => {
 };
 
 exports.postSignup = async(req, res, next) => {
-  
-  
-  // console.log(req.body.file)
-
-  // console.log(req.body)
   const validationErrors = [];
     if (!validator.isEmail(req.body.email))
       validationErrors.push({ msg: "Please enter a valid email address." });
