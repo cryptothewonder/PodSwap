@@ -18,6 +18,11 @@ nav li{
     width: 30%;
 }
 
+/* Inbox */
+.chat-messages{
+    background: rgba(219, 100, 100, 0.95);
+}
+
 
 /* Media queries */
 

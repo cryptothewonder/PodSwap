@@ -1,6 +1,13 @@
+const User = require("../../models/User")
+
 module.exports = {
     getInbox: async (req, res) => {
-      res.render("inbox.html");
-    },
-  };
-
+      try {
+      //retrieve user
+      const user = await User.find({ user: req.user.id });
+      res.render("inbox.html", { user: req.user });
+    }  catch (err) {
+      console.log(err);
+    }
+  }
+}
