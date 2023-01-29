@@ -5,8 +5,8 @@ const homeController = require("../controllers/home");
 const postsController = require("../controllers/posts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 const upload = require("../middleware/multer");
-// const messageController = require('../controllers/messageClient');
-// const getInbox = require("../controllers/messageClient");
+const emailController = require("../controllers/newsletter")
+
 
 
 //Main Routes - simplified for now
@@ -22,7 +22,8 @@ router.get('/comedy', ensureAuth, postsController.getComedy)
 router.get('/truecrime', ensureAuth, postsController.getTrueCrime)
 router.get('/science', ensureAuth, postsController.getScience)
 router.get('/other', ensureAuth, postsController.getOther)
-// router.get('/inbox', messageController.getInbox)
+router.post('/newsletter', emailController.postEmail)
+
 
 
 

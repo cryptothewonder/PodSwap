@@ -1,6 +1,7 @@
 
 const msgForm = document.getElementById('msgForm');
 const chatMessages = document.querySelector(".chat-messages")
+// const User = require('../models/User');
 
 const socket = io();
     
@@ -35,7 +36,7 @@ msgForm.addEventListener('submit', (e)=> {
 function outputMessage(message){
   const div = document.createElement('div');
   div.classList.add('message');
-  div.innerHTML =`<p>${user.userName}</p><p>${message}</p>`;
+  div.innerHTML =`<p> <%= user.userName %></p><p><%= message %> </p>`;
   document.querySelector('.chat-messages').appendChild(div);
 }
 

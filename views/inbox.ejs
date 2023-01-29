@@ -31,17 +31,21 @@
    
 </head>
 <body>
-  <h1>HTML</h1>
+    <h1>EJS</h1>
     <form id="msgForm" actions = ''>
         <input type="text" id='msg' name="msg">
         <button>Send</button>
         
         <!-- message box -->
         <div class="chat-messages">
-        
+          
         </div>
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src = '/controllers/messageClient.js'></script>
 </body>
 </html>
+
+<!-- Where I left off, Currently decided to switch to an ejs, so I began that process.  Then it became clear that I should have done that from the start. Then it became clear I should have done React from the start.  Which was what I was thinking so why did I stray? -->
+
+<!-- Now, I'm trying to render the data through the ejs template, but it feels like a waste of time because, guess what?  It should just be done via React.  So leave this note and work on something else for today and come back to this tomorrow. -->

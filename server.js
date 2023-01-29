@@ -76,13 +76,6 @@ const cors = require('cors');
 const { Socket } = require("dgram");
 app.use(cors());
 
-// Potentially old code
-// const httpServer = createServer(app);
-// const io = new Server(httpServer, { 
-//   cors: {
-//     origin: "http://localhost:2122",
-//     methods:['GET','POST']
-// } });
 
 http.listen(4000, () => {
   console.log("I'm listening in 4000")
@@ -112,8 +105,13 @@ io.on("connection", socket => {
 
 
 
+// app.get("/inbox", (req, res) => {
+//   res.sendFile(__dirname + "/views/inbox.html");
+// });
+
+//rendering to the ejs instead of the .html
 app.get("/inbox", (req, res) => {
-  res.sendFile(__dirname + "/views/inbox.html");
+  res.render("inbox",{});
 });
 
 app.get('/controllers/messageClient.js', (req, res) => {
