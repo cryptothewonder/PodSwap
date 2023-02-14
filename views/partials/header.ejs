@@ -49,16 +49,29 @@
               <li class="nav-item"><a class='nav-link' href="/science">Science</a></li>
               <li class="nav-item"><a class='nav-link' href="/truecrime">True Crime</a></li>
               <li class="nav-item"><a class='nav-link' href="/other">Other</a></li>
-              <li class="nav-item "><a class='nav-link fa fa-envelope' href="http://localhost:4000/inbox"></a></li>
+              <li class="nav-item "><a class='nav-link fa fa-envelope' id="envelope" ></a></li>
             </ul>
           </div>
         </div>
-        <!-- <iframe src="http://localhost:4000/inbox" width="500" height="300"></iframe> -->
+        <iframe src="http://localhost:4000/inbox" width="500" height="300" id="iframe"></iframe>
       </nav>
+      
       <!-- <div class="text-center">
         <h1 class=""><a href="/profile"><img src="/imgs/podswap-logo.png" alt="PodSwap" id="logo"></a></h1>
         <span>The one-stop shop to swap!</span>
       </div> -->
     <!-- </header> -->
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#iframe").hide();
+    $("#envelope").click(function() {
+      $("#iframe").toggle();
+    });
+  });
+</script>
 </html>
+
+<!-- This was the href before switching to iframe -->
+<!-- href="http://localhost:4000/inbox" -->
