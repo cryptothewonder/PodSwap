@@ -74,7 +74,10 @@ const io = require("socket.io")(http);
 const cors = require('cors');
 
 const { Socket } = require("dgram");
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:2122",
+  methods: ['GET','POST']
+}));
 
 
 http.listen(4000, () => {
