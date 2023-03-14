@@ -36,7 +36,7 @@ msgForm.addEventListener('submit', (e)=> {
 function outputMessage(message){
   const div = document.createElement('div');
   div.classList.add('message');
-  div.innerHTML =`<p> <%= user.userName %></p><p><%= message %> </p>`;
+  div.innerHTML =`<p class= message-top> <%= user.userName %></p><p class = "messages"><%= message %> </p>`;
   document.querySelector('.chat-messages').appendChild(div);
 }
 
