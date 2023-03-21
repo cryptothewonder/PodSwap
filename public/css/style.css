@@ -2,6 +2,18 @@
     height: 33%;
     width: 33%;
 }
+
+/* .firstSect{
+    padding-top: 150px;
+} */
+
+/* nav stuff */
+/* .navbar{
+    position: fixed;
+    z-index: 999;
+    margin-bottom: 20px;
+} */
+
 nav li{
     display: inline;
     border-left: 2px solid rgb(231, 83, 83);
@@ -37,6 +49,16 @@ nav li{
     margin-bottom: 0.5rem;
     font-size: 10px;
     color: silver;
+}
+
+.messageBox{
+    position: fixed;
+    top: 10px; /* adjust to your needs */
+    left: 0px;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 
