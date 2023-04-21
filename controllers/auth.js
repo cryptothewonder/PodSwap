@@ -66,6 +66,8 @@ exports.getSignup = (req, res) => {
   });
 };
 
+//currently the website breaks if the user doesn't put in a profile pic
+
 exports.postSignup = async(req, res, next) => {
   const validationErrors = [];
     if (!validator.isEmail(req.body.email))
